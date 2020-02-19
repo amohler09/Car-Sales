@@ -9,6 +9,14 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 const App = props => {
+  
+  // const removeFeature = item => (
+  //   { type: 'REMOVE_FEATURE', payload: item }
+  // );
+
+  // const buyItem = item => (
+  //  { type: 'BUY_ITEM', payload: item}
+  // );
 
   return (
     <div className="boxes">
@@ -16,12 +24,12 @@ const App = props => {
         <Header car={props.car} />
         <AddedFeatures 
         car={props.car}
-        removeFeature={removeFeature} />
+        removeFeature={props.removeFeature} />
       </div>
       <div className="box">
         <AdditionalFeatures
         additionalFeatures={props.additionalFeatures}
-        buyItem={buyItem}
+        buyItem={props.buyItem}
          />
         <Total 
         car={props.car} 
@@ -40,4 +48,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps,
-  { buyItem, removeFeature})(App);
+  {buyItem, removeFeature})(App);

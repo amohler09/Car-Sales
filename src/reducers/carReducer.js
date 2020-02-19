@@ -40,7 +40,7 @@ const initialState = {
                 additionalPrice: Price,
                 car: {
                     ...state.car,
-                    features: [filteredFeatures]
+                    features: filteredFeatures
                 }
             }
 
